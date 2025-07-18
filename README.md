@@ -38,7 +38,7 @@ A machine learning-powered web application that predicts the risk of heart disea
 
 ## 🚀 Live Demo
 
-Try the live application: [Heart Disease Predictor App](https://savankansagara1-heart-stroke-prediction-app-3z7g0l.streamlit.app/)
+Try the live application: [Heart Disease Predictor App](https://heartstrokeprediction.streamlit.app/)
 
 ## 💻 Local Development
 
