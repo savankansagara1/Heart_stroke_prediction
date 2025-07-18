@@ -12,20 +12,90 @@ st.set_page_config(
 # Custom CSS for styling
 st.markdown("""
 <style>
+    /* Base styles */
     .main {
         padding: 2rem;
+        animation: fadeIn 0.5s ease-in;
     }
+    
+    /* Button styles */
     .stButton>button {
         width: 100%;
         background-color: #FF4B4B;
         color: white;
         padding: 0.5rem 0;
+        transition: all 0.3s ease;
+        animation: buttonPulse 2s infinite;
     }
+    
     .stButton>button:hover {
         background-color: #FF2B2B;
+        transform: scale(1.02);
     }
+    
+    /* Text styles */
     div[data-testid="stMarkdownContainer"] > p {
         font-size: 1.1rem;
+        animation: slideIn 0.5s ease-out;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes buttonPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+
+    /* Responsive design */
+    @media screen and (max-width: 768px) {
+        .main {
+            padding: 1rem;
+        }
+        div[data-testid="stMarkdownContainer"] > p {
+            font-size: 1rem;
+        }
+        .stButton>button {
+            padding: 0.7rem 0;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .main {
+            padding: 0.5rem;
+        }
+        div[data-testid="stMarkdownContainer"] > p {
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Footer styles */
+    .footer {
+        margin-top: 2rem;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        animation: fadeIn 1s ease-in;
+    }
+
+    .footer a {
+        color: #FF4B4B;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+        color: #FF2B2B;
+        text-decoration: underline;
     }
 </style>
 """, unsafe_allow_html=True)
